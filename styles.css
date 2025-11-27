@@ -56,3 +56,28 @@ body {
   color: white;
   font-size: 16px;
 }
+
+/* ----HEADER---- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 1.25rem;
+  background-color: #333;
+  color: white;
+}
+
+.logo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 2rem;
+}
+
+.right-icons {
+  display: flex;
+  gap: 1rem; 
+}
+
+/* ----HEADER---- */
