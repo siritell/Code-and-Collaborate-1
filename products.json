@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Classic White T-Shirt",
+    "price": "15.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=White+T-Shirt"
+  },
+  {
+    "title": "Black Skinny Jeans",
+    "price": "45.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Black+Jeans"
+  },
+  {
+    "title": "Blue Denim Jacket",
+    "price": "65.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Denim+Jacket"
+  },
+  {
+    "title": "Red Plaid Scarf",
+    "price": "12.50",
+    "picture": "https://via.placeholder.com/300x300.png?text=Plaid+Scarf"
+  },
+  {
+    "title": "Leather Ankle Boots",
+    "price": "75.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Leather+Boots"
+  },
+  {
+    "title": "Striped Crew Socks",
+    "price": "8.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Crew+Socks"
+  },
+  {
+    "title": "Gray Hoodie",
+    "price": "35.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Gray+Hoodie"
+  },
+  {
+    "title": "Beige Chino Shorts",
+    "price": "28.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Chino+Shorts"
+  },
+  {
+    "title": "Brown Leather Belt",
+    "price": "22.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Leather+Belt"
+  },
+  {
+    "title": "Navy Blue Beanie",
+    "price": "14.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Navy+Beanie"
+  },
+  {
+    "title": "White Canvas Sneakers",
+    "price": "40.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Canvas+Sneakers"
+  },
+  {
+    "title": "Black Leather Backpack",
+    "price": "55.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Leather+Backpack"
+  },
+  {
+    "title": "Green Cargo Pants",
+    "price": "48.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Cargo+Pants"
+  },
+  {
+    "title": "Yellow Raincoat",
+    "price": "60.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Yellow+Raincoat"
+  },
+  {
+    "title": "Floral Print Dress",
+    "price": "50.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Floral+Dress"
+  },
+  {
+    "title": "Black Sunglasses",
+    "price": "18.00",
+    "picture": "https://via.placeholder.com/300x300.png?text=Sunglasses"
+  }
+]
