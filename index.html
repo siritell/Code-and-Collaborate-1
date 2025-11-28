@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TrendWear - Your Fashion Destination">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TrendWear - Your Fashion Destination" />
     <title>TrendWear</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div id="product-grid" class="product-grid"></div>
-  <button id="load-more-btn">Load more</button>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="icons/hamburger-menu.svg"
+        alt="hamburger-menu icon"
+        class="hamburger-menu"
+      />
+      <span class="logo"> TW </span>
+      <div class="right-icons">
+        <img
+          src="icons/heart.svg"
+          alt="favorites icon"
+          class="favorites-icon"
+        />
+        <img
+          src="icons/shoppingbag.svg"
+          alt="shopping-bag icon"
+          class="shopping-bag"
+        />
+      </div>
+    </div>
+    <div id="product-grid" class="product-grid"></div>
+    <button id="load-more-btn">Load more</button>
 
-  <script src="script.js"></script>
-    
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

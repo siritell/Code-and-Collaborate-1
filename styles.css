@@ -1,4 +1,4 @@
---------CSS RESET--------
+/*--------CSS RESET--------*/
 /* Box sizing rules */
 *,
 *::before,
@@ -73,7 +73,7 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
---------CSS RESET--------
+/*--------CSS RESET--------*/
 body {
   margin: 0;
   padding: 0;
@@ -132,3 +132,35 @@ body {
   color: white;
   font-size: 16px;
 }
+
+/* ----HEADER---- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 1rem; 
+  height: 3.5rem; 
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 1.5rem;
+}
+
+.right-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.right-icons img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.hamburger-menu {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ----HEADER---- */
