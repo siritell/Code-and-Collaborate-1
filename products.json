@@ -1,10 +1,12 @@
 [
   {
     "id": 1,
+     "type": "apparel",
     "title": "Classic White T-Shirt",
     "price": "15.00",
     "picture1": "",
     "picture2": ""
+  },  
   {
     "id": 2,
     "type": "apparel",
@@ -36,7 +38,7 @@
     "price": "75.00",
     "picture1": "",
     "picture2": ""
-  },
+  },  
   {
     "id": 6,
     "type": "accessory",
@@ -44,7 +46,8 @@
     "price": "8.00",
     "picture1": "",
     "picture2": ""
-  {
+  },
+  {                       
     "id": 7,
     "type": "apparel",
     "title": "Gray Hoodie",
@@ -110,7 +113,7 @@
   },
   {
     "id": 15,
-    "type": 
+    "type": "",
     "title": "Floral Print Dress",
     "price": "50.00",
     "picture1": "",
