@@ -140,8 +140,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.6rem 1.25rem;
-  background-color: #333;
-  color: white;
+  background-color: #fff;
+  color: #000;
 }
 
 .logo {
@@ -153,7 +153,9 @@ body {
 
 .right-icons {
   display: flex;
-  gap: 1rem; 
+  gap: 0.5rem;
+  width: 1.3rem;
+  height: auto;
 }
 
 /* ----HEADER---- */
