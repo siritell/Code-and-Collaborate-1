@@ -1,82 +1,154 @@
 [
   {
+    "id": 1,
     "title": "Classic White T-Shirt",
     "price": "15.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=White+T-Shirt"
-  },
+    "picture1": "",
+    "picture2": ""
   {
-    "title": "Black Skinny Jeans",
+    "id": 2,
+    "type": "apparel",
+    "title": "",
     "price": "45.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Black+Jeans"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 3,
+    "type": "apparel",
     "title": "Blue Denim Jacket",
     "price": "65.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Denim+Jacket"
+    "picture1": "",
+    "picture2": ""
   },
-  {
+  { 
+    "id": 4,
+    "type": "accessory",
     "title": "Red Plaid Scarf",
     "price": "12.50",
-    "picture": "https://via.placeholder.com/300x300.png?text=Plaid+Scarf"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 5,
+    "type": "footwear",
     "title": "Leather Ankle Boots",
     "price": "75.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Leather+Boots"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 6,
+    "type": "accessory",
     "title": "Striped Crew Socks",
     "price": "8.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Crew+Socks"
-  },
+    "picture1": "",
+    "picture2": ""
   {
+    "id": 7,
+    "type": "apparel",
     "title": "Gray Hoodie",
     "price": "35.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Gray+Hoodie"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 8,
+    "type": "apparel",
     "title": "Beige Chino Shorts",
     "price": "28.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Chino+Shorts"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 9,
+    "type": "accessory",
     "title": "Brown Leather Belt",
     "price": "22.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Leather+Belt"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 10,
+    "type": "accessory",
     "title": "Navy Blue Beanie",
     "price": "14.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Navy+Beanie"
+    "picture1": "",
+    "picture2": "",
   },
   {
+    "id": 11,
+    "type": "footwear",
     "title": "White Canvas Sneakers",
     "price": "40.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Canvas+Sneakers"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 12,
+    "type": "accessory",
     "title": "Black Leather Backpack",
     "price": "55.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Leather+Backpack"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 13,
+    "type": "apparel",
     "title": "Green Cargo Pants",
     "price": "48.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Cargo+Pants"
+    "picture1": "",
+    "picture2": ""
   },
-  {
+  { 
+    "id": 14,
+    "type": "apparel",
     "title": "Yellow Raincoat",
     "price": "60.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Yellow+Raincoat"
+    "picture1": "",
+    "picture2": ""
   },
   {
+    "id": 15,
+    "type": 
     "title": "Floral Print Dress",
     "price": "50.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Floral+Dress"
+    "picture1": "",
+    "picture2": ""
   },
-  {
+  {"id": 16,
+    "type": "accessory",
     "title": "Black Sunglasses",
     "price": "18.00",
-    "picture": "https://via.placeholder.com/300x300.png?text=Sunglasses"
+    "picture1": "",
+    "picture2": ""
+  },
+   {"id": 17,
+    "type": "accessory",
+    "title": "Black Sunglasses",
+    "price": "18.00",
+    "picture1": "",
+    "picture2": ""
+    },
+   {"id": 18,
+    "type": "accessory",
+    "title": "Black Sunglasses",
+    "price": "18.00",
+    "picture1": "",
+    "picture2": ""
+  },
+   {"id": 19,
+    "type": "",
+    "title": "Black Sunglasses",
+    "price": "18.00",
+    "picture1": "",
+    "picture2": ""
+  },
+   {"id": 20,
+    "type": "",
+    "title": "Black Sunglasses",
+    "price": "18.00",
+    "picture1": "",
+    "picture2": ""
   }
 ]
