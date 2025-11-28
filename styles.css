@@ -138,24 +138,29 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.6rem 1.25rem;
-  background-color: #fff;
-  color: #000;
+  justify-content: space-between; 
+  padding: 0 1rem; 
+  height: 3.5rem; 
 }
 
 .logo {
-  text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
 
 .right-icons {
   display: flex;
   gap: 0.5rem;
+}
+
+.right-icons img {
   width: 1.3rem;
-  height: auto;
+  height: 1.3rem;
+}
+.hamburger-menu {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 /* ----HEADER---- */
