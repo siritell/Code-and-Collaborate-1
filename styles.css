@@ -164,3 +164,123 @@ body {
 }
 
 /* ----HEADER---- */
+/*sahee*/
+
+/* ---------- Layout Wrapper ---------- */
+.product-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+/* ---------- Left Side: Images ---------- */
+.product-images {
+  flex: 1;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.thumb:hover {
+  border-color: #000;
+}
+
+/* ---------- Right Side: Product Info ---------- */
+.product-info-box {
+  flex: 1;
+  max-width: 500px;
+}
+
+.product-info-box h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.product-info-box strong {
+  font-size: 16px;
+}
+
+/* ---------- Sizes ---------- */
+.sizes {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 25px;
+}
+
+.size-option {
+  padding: 8px 14px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.size-option:hover {
+  border-color: #000;
+  background-color: #f3f3f3;
+}
+
+/* ---------- Back Button ---------- */
+.back {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+.back:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ---------- Responsive (Mobile) ---------- */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .main-image {
+    max-width: 100%;
+  }
+}
