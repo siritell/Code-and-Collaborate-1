@@ -37,6 +37,10 @@ function renderProducts() {
       </div>
     `;
 
+    card.addEventListener('click', () => {
+      window.location.href = `product.html?id=${product.id}`;
+    });
+
     grid.appendChild(card);
   });
 }
