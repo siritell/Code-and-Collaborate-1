@@ -85,8 +85,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  border-top: 3px solid black;
-  border-left: 3px solid black;
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
   margin: 20px;
 }
 
@@ -95,8 +95,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 3px solid black;
-  border-right: 3px solid black;
+  border-bottom: 1.5px solid black;
+  border-right: 1.5px solid black;
 }
 
 .product-card img {
@@ -120,6 +120,16 @@ body {
 .product-price {
   font-size: 14px;
   color: #333;
+}
+
+.sale-banner {
+  display: block;
+  margin: 20px 0;
+}
+
+.sale-banner img {
+  width: 100%;
+  height: auto;
 }
 
 #load-more-btn {

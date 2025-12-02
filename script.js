@@ -6,9 +6,18 @@ fetch("products.json")
   .then(response => response.json())
   .then(data => {
     products = data;
+    addSaleBanner();
     renderProducts();
   })
   .catch(err => console.error("Could not load JSON:", err));
+
+function addSaleBanner() {
+  const grid = document.getElementById("product-grid");
+  const banner = document.createElement("div");
+  banner.className = "sale-banner";
+  banner.innerHTML = `<img src="images/SALE.jpg" alt="Sale Banner" />`;
+  grid.parentNode.insertBefore(banner, grid);
+}
 
 function renderProducts() {
   const grid = document.getElementById("product-grid");
