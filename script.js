@@ -45,3 +45,12 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   itemsToShow += 8; // 4 more rows
   renderProducts();
 });
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
