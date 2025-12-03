@@ -15,10 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
           detailsContainer.innerHTML = `
                 <div class="single-product">
                   <div class="product-image-box">
-                    <img src="${product.picture1}" class="main-product-img" alt="${product.title}">
-                    <img src="${product.picture2}" class="main-product-img" alt="${product.title}">
+                   <div class="slider">
+    <img src="${product.picture1}" class="slide active">
+    <img src="${product.picture2}" class="slide">
+  </div>
 
-                  </div>
+  <div class="slider-buttons">
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+  </div>
+</div>
                   <div class="product-main-info">
                     <h3 class="product-title">${product.title}</h3>
                     <div class="price-cart-row">
@@ -62,6 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
     detailsContainer.innerHTML = '<p>No product selected.</p>';
   }
 });
+const slides = document.querySelectorAll(".slide");
+let current = 0;
+
+document.querySelector(".next").addEventListener("click", () => {
+  slides[current].classList.remove("active");
+  current = (current + 1) % slides.length;
+  slides[current].classList.add("active");
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  slides[current].classList.remove("active");
+  current = (current - 1 + slides.length) % slides.length;
+  slides[current].classList.add("active");
+});
+
 
 
 

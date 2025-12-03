@@ -112,4 +112,47 @@
   transform: rotate(90deg); /* Rotate arrow when open */
 }
 
+/*  slide*/
+
+.product-image-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slider-buttons {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-buttons button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
