@@ -37,6 +37,10 @@ function renderProducts() {
       </div>
     `;
 
+    card.addEventListener('click', () => {
+      window.location.href = `product.html?id=${product.id}`;
+    });
+
     grid.appendChild(card);
   });
 }
@@ -45,3 +49,5 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   itemsToShow += 8; // 4 more rows
   renderProducts();
 });
+
+

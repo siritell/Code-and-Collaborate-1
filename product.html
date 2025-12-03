@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TrendWear - Your Fashion Destination" />
-    <title>TrendWear</title>
-    <link rel="stylesheet" href="styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="single-product.css">
     <link rel="stylesheet" href="header.css" />
-  </head>
-  <body>
-    <div class="header">
+</head>
+<body class="product-page">
+
+  <div class="header">
       <img
         src="icons/hamburger-menu.svg"
         alt="hamburger-menu icon"
@@ -29,10 +30,11 @@
         />
       </div>
     </div>
-    <div id="product-grid" class="product-grid"></div>
-            <button id="load-more-btn">Load more</button>
 
-    <script src="script.js"></script>
-    
-  </body>
+    <main id="product-details">
+        <!-- Product details will be injected here by script.js -->
+    </main>
+
+    <script src="product.js"></script>
+</body>
 </html>
