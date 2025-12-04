@@ -29,13 +29,22 @@ function renderProducts() {
     const card = document.createElement("div");
     card.className = "product-card";
 
+  if (product.sale_price){
     card.innerHTML = `
       <img src="${product.picture1}" alt="${product.title}" />
       <div class="product-info">
         <div class="product-title">${product.title}</div>
-        <div class="product-price">$${product.price}</div>
+        <div class="product-price"><div class="old-price">${product.price}</div> <div class="product-sale-price">${product.sale_price}</div></div>
       </div>
     `;
+  } else {
+    card.innerHTML = `
+      <img src="${product.picture1}" alt="${product.title}" />
+      <div class="product-info">
+        <div class="product-title">${product.title}</div>
+        <div class="product-price">${product.price}</div>
+      </div>
+    `; }
 
     card.addEventListener('click', () => {
       window.location.href = `product.html?id=${product.id}`;

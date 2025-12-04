@@ -81,73 +81,7 @@ body {
   background: #fff;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 1.5px solid black;
-  border-left: 1.5px solid black;
-  margin: 20px;
-}
 
-.product-card {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-bottom: 1.5px solid black;
-  border-right: 1.5px solid black;
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.product-info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.product-title {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.product-price {
-  font-size: 14px;
-  color: #333;
-}
-
-.sale-banner {
-  display: block;
-  margin: 20px 0;
-}
-
-.sale-banner img {
-  width: 100%;
-  height: auto;
-}
-
-#load-more-btn {
-  width: 100%;
-  padding: 14px;
-  margin: 15px 0;
-  border: none;
-  border-radius: 6px;
-  background: black;
-  color: white;
-  font-size: 16px;
-}
-
-@media (max-width: 768px){
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 /* ----NAVBAR---- */
 
