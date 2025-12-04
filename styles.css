@@ -97,6 +97,7 @@ body {
   justify-content: space-between;
   border-bottom: 1.5px solid black;
   border-right: 1.5px solid black;
+  position: relative;
 }
 
 .product-card img {

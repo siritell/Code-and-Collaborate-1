@@ -14,9 +14,19 @@ fetch("products.json")
   })
   .catch(err => console.error("Could not load JSON:", err));
   
+
+function addSaleBanner() {
+  const grid = document.getElementById("product-grid");
+  const banner = document.createElement("div");
+  banner.className = "sale-banner";
+  banner.innerHTML = `<img src="images/SALE.jpg" alt="Sale Banner" />`;
+  grid.parentNode.insertBefore(banner, grid);
+}
+
 function addSaveButtonListeners() {
   document.querySelectorAll('.save-btn').forEach(save => {
     save.addEventListener('click', () => {
+      event.stopPropagation();
       save.classList.toggle('active');
       const product = products.find(p => p.id == save.dataset.id);
       toggleFavorite(product);
