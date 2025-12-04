@@ -271,7 +271,6 @@ a{
 /* ----HEADER---- */
 
 
-
 /* Save button */
 .save-btn {
     position: absolute;
@@ -304,3 +303,47 @@ a{
     fill: #000;       
     stroke: #000;     
 }
+
+/* ----FOOTER---- */
+footer {
+  padding-top: 2rem;
+}
+.newsletter-section {
+  border-top: 1px solid #333; 
+}
+.newsletter-section,
+.help-section,
+.legal-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  border-bottom: 1px solid #333;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+.newsletter-section img,
+.help-section img,
+.legal-section img {
+  margin-left: auto; 
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.contact-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+}
+footer img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.contact-section img {
+  width: 2rem;
+  height: 2rem;
+}
+.newsletter-section p,
+.help-section p,
+.legal-section p {
+  margin: 0;
+}
+/* ----FOOTER---- */
