@@ -50,7 +50,6 @@
             }
           })
 
-
           .catch(error => {
             console.error('Error fetching product data:', error);
             detailsContainer.innerHTML = '<p>Error loading product details.</p>';
