@@ -9,34 +9,70 @@
     <link rel="stylesheet" href="header.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
 
-<header class="header">
-  <div class="hamburger">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
+      <nav class="navbar">
+        <a href="#" class="nav-branding">TW</a>
+      </nav>
 
-  <nav class="navbar">
-    <a href="#" class="nav-branding">TW</a>
-  </nav>
+      <div class="right-icons">
+        <img
+          src="icons/heart.svg"
+          alt="favorites icon"
+          class="favorites-icon"
+        />
+        <img
+          src="icons/shoppingbag.svg"
+          alt="shopping-bag icon"
+          class="shopping-bag"
+        />
+      </div>
+    </header>
 
-  <div class="right-icons">
-    <img src="icons/heart.svg" alt="favorites icon" class="favorites-icon" />
-    <img src="icons/shoppingbag.svg" alt="shopping-bag icon" class="shopping-bag" />
-  </div>
-</header>
-
-<ul class="nav-menu">
-  <li class="nav-item"><a href="#" class="nav-link">New In</a></li>
-  <li class="nav-item"><a href="#" class="nav-link">SALE</a></li>
-  <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
-</ul>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#" class="nav-link">New In</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">SALE</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
+    </ul>
 
     <div id="product-grid" class="product-grid"></div>
-    
+
     <button id="load-more-btn">Load more</button>
 
-    <script type="module" src="script.js"></script> 
+    <footer>
+      <div class="newsletter-section" aria-label="Newsletter subscription">
+        <p>NEWSLETTER</p>
+        <img src="/icons/dropdown.svg" alt="Expand newsletter options" />
+      </div>
+      <div class="help-section" aria-label="Help links">
+        <p>HELP</p>
+        <img src="/icons/dropdown.svg" alt="Expand help options" />
+      </div>
+      <div class="legal-section" aria-label="Legal information">
+        <p>LEGAL</p>
+        <img src="/icons/dropdown.svg" alt="Expand legal options" />
+      </div>
+      <div class="contact-section" aria-label="Social media links">
+        <img
+          class="instagram-icon"
+          src="/icons/instagram.svg"
+          src="/icons/instagram.svg"
+          alt="Instagram"
+        />
+        <img
+          class="facebook-icon"
+          src="/icons/facebook.svg"
+          src="/icons/facebook.svg"
+          alt="Facebook"
+        />
+      </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>
