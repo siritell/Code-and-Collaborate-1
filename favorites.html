@@ -6,23 +6,79 @@
     <title>Your Favorites - TrendWear</title>
 
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="favorites.css" />
   </head>
 
   <body>
 
-    <div class="header">
-      <a href="index.html" class="back-link">←</a>
-      <span class="logo">TW</span>
-    </div>
+<header class="header">
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
 
+      <nav class="navbar">
+        <a href="#" class="nav-branding">TW</a>
+      </nav>
+
+      <div class="right-icons">
+        <a href="favorites.html" class="favorites-link">
+          <img
+            src="icons/heart-filled.svg"
+            alt="favorites icon"
+            class="favorites-icon"
+          />
+        </a>
+        <a href="shopping-bag.html" class="shopping-bag">
+          <img
+            src="icons/shopping-bag-4-line.svg"
+            alt="shopping-bag icon"
+            class="shopping-bag"
+
+            
+          />
+        </a>
+      </div>
+    </header>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#" class="nav-link">New In</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">SALE</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
+    </ul>
     <main>
-      <h1 class="favorites-title">Your Wish List</h1>
+      <div id="favorite-top">
+        <a href="index.html" class="back-link">←</a>
+        <h1 class="favorites-title">SAVED ITEMS</h1>
+      </div>
 
       <div id="favorites-grid" class="product-grid"></div>
     </main>
+    
+    <footer>
+        <div class="newsletter-section" aria-label="Newsletter subscription">
+          <p>NEWSLETTER</p>
+          <img src="icons/dropdown.svg" alt="Expand newsletter options" />
+        </div>
+        <div class="help-section" aria-label="Help links">
+          <p>HELP</p>
+          <img src="icons/dropdown.svg" alt="Expand help options" />
+        </div>
+        <div class="legal-section" aria-label="Legal information">
+          <p>LEGAL</p>
+          <img src="icons/dropdown.svg" alt="Expand legal options" />
+        </div>
+        <div class="contact-section" aria-label="Social media links">
+          <img class="instagram-icon" src="icons/instagram.svg" alt="Instagram" />
+          <img class="facebook-icon" src="icons/facebook.svg" alt="Facebook" />
+        </div>
+      </footer>
+
+
 
     <script type="module" src="storage.js"></script>
     <script type="module" src="favorites.js"></script>
 
   </body>
+
 </html>
