@@ -79,6 +79,13 @@ body {
   padding: 0;
   font-family: Arial; 
   background: #fff;
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 .product-grid {
@@ -331,6 +338,7 @@ a{
 /* ----FOOTER---- */
 footer {
   padding-top: 2rem;
+  margin-top: auto; 
 }
 .newsletter-section {
   border-top: 1px solid #333; 
