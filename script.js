@@ -4,6 +4,19 @@ import { toggleFavorite } from "./storage.js";
 let products = [];
 let itemsToShow = 8; // 4 rows × 2 columns
 
+function getFavoritesFromStorage() {
+  try {
+    return JSON.parse(localStorage.getItem('favorites') || '[]');
+  } catch (e) {
+    return [];
+  }
+}
+
+function isFavorited(id) {
+  const favs = getFavoritesFromStorage();
+  return favs.some(f => (typeof f === 'object' ? f.id == id : f == id));
+}
+
 // Load products.json
 fetch("products.json")
   .then(response => response.json())
@@ -72,6 +85,15 @@ function renderProducts() {
      </span>
    `; }
 
+       const tempSaveBtn = card.querySelector('.save-btn');
+    if (tempSaveBtn && isFavorited(product.id)) {
+      tempSaveBtn.classList.add('active');
+    }
+
+    card.addEventListener('click', () => {
+      window.location.href = `product.html?id=${product.id}`;
+    });
+    
     card.addEventListener('click', () => {
       window.location.href = `product.html?id=${product.id}`;
     });
