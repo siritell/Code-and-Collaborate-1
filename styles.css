@@ -77,7 +77,7 @@ textarea:not([rows]) {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial; 
   background: #fff;
 }
 
@@ -85,8 +85,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  border-top: 1.5px solid black;
-  border-left: 1.5px solid black;
   margin: 20px;
 }
 
@@ -95,8 +93,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1.5px solid black;
-  border-right: 1.5px solid black;
   position: relative;
 }
 
@@ -114,13 +110,12 @@ body {
 }
 
 .product-title {
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
 }
 
 .product-price {
-  font-size: 14px;
-  color: #333;
+  font-size: 12px;
+  color: #000000;
 }
 
 .sale-banner {
@@ -139,8 +134,8 @@ body {
   margin: 15px 0;
   border: none;
   border-radius: 6px;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   font-size: 16px;
 }
 
@@ -161,7 +156,7 @@ li{
 }
 
 a{
-  color: #333;
+  color: #000000;
   text-decoration: none;
 }
 
