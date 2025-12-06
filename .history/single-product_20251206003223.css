@@ -53,7 +53,6 @@
 
 /* ACCORDION */
 .accordion {
-    border-top: 1px solid #ccc;
   width: 100%;
 }
 
@@ -61,9 +60,7 @@
   padding: 10px 0;          /* space above & below each section */
   border-bottom: 1px solid #ddd; /* light separator line */
 }
-.accordion-item:last-child {
-  border-bottom: none;
-}
+
 .accordion-header {
   padding: 16px;
   font-size: 14px;
@@ -86,7 +83,6 @@
 }
 
 .accordion-content {
-  padding: 5px 0 5px 15px;  /* top right bottom left */
   max-height: 0;           /* Hidden by default */
   overflow: hidden;        /* Hide extra content */
   transition: max-height 0.3s ease;

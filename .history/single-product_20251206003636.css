@@ -86,7 +86,6 @@
 }
 
 .accordion-content {
-  padding: 5px 0 5px 15px;  /* top right bottom left */
   max-height: 0;           /* Hidden by default */
   overflow: hidden;        /* Hide extra content */
   transition: max-height 0.3s ease;

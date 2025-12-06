@@ -18,9 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Inject product HTML 
+        // Inject product HTML with font-family from JSON
+      const font = product.fontFamily || "Arial";
       detailsContainer.innerHTML = `
-          <div class="single-product">
+        <div class="single-product" style="font-family: ${font};">
 
             <!-- IMAGE SLIDER -->
             <div class="product-image-box slider-container">
@@ -104,16 +105,23 @@ document.addEventListener("DOMContentLoaded", () => {
         header.addEventListener("click", () => {
           const item = header.parentElement;
           const content = header.nextElementSibling;
-// Toggle ON/OFF without closing others
-    item.classList.toggle("active");
 
-    if (item.classList.contains("active")) {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } else {
-      content.style.maxHeight = null;
-    }
-  });
-});
+          // Toggle display
+          const isOpen = item.classList.contains("active");
+          document
+            .querySelectorAll(".accordion-item")
+            .forEach((i) => i.classList.remove("active"));
+          document
+            .querySelectorAll(".accordion-content")
+            .forEach((c) => (c.style.maxHeight = null));
+
+          if (!isOpen) {
+            item.classList.add("active");
+            
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
 
       /* -------------------------------
           ADD SIZE CHIPS (IF AVAILABLE)
