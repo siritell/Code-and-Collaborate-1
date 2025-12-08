@@ -64,7 +64,27 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
       `;
+/*  drop down */
+const accordionHeaders2 = document.querySelectorAll(".accordion-header");
 
+accordionHeaders.forEach((header) => {
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+    const content = header.nextElementSibling;
+
+    const isOpen = item.classList.contains("active");
+
+    // Close all
+    document.querySelectorAll(".accordion-item").forEach(i => i.classList.remove("active"));
+    document.querySelectorAll(".accordion-content").forEach(c => c.style.maxHeight = null);
+
+    // Open clicked one
+    if (!isOpen) {
+      item.classList.add("active");
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
 
 
       /* -------------------------------
@@ -104,16 +124,22 @@ document.addEventListener("DOMContentLoaded", () => {
         header.addEventListener("click", () => {
           const item = header.parentElement;
           const content = header.nextElementSibling;
-// Toggle ON/OFF without closing others
-    item.classList.toggle("active");
 
-    if (item.classList.contains("active")) {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } else {
-      content.style.maxHeight = null;
-    }
-  });
-});
+          // Toggle display
+          const isOpen = item.classList.contains("active");
+          document
+            .querySelectorAll(".accordion-item")
+            .forEach((i) => i.classList.remove("active"));
+          document
+            .querySelectorAll(".accordion-content")
+            .forEach((c) => (c.style.maxHeight = null));
+
+          if (!isOpen) {
+            item.classList.add("active");
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
 
       /* -------------------------------
           ADD SIZE CHIPS (IF AVAILABLE)
