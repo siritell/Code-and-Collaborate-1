@@ -1,3 +1,5 @@
+import { addToBag } from "./shopping-bag.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Inject product HTML 
+      // Inject product HTML
       detailsContainer.innerHTML = `
           <div class="single-product">
 
@@ -64,8 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
       `;
-
-
+      // ADD TO CART EVENT
+      const addCartBtn = document.querySelector(".add-cart-btn");
+      if (addCartBtn) {
+        addCartBtn.addEventListener("click", () => {
+          addToBag(product);
+        });
+      }
 
       /* -------------------------------
          SLIDER FUNCTIONALITY
@@ -104,16 +111,16 @@ document.addEventListener("DOMContentLoaded", () => {
         header.addEventListener("click", () => {
           const item = header.parentElement;
           const content = header.nextElementSibling;
-// Toggle ON/OFF without closing others
-    item.classList.toggle("active");
+          // Toggle ON/OFF without closing others
+          item.classList.toggle("active");
 
-    if (item.classList.contains("active")) {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } else {
-      content.style.maxHeight = null;
-    }
-  });
-});
+          if (item.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = null;
+          }
+        });
+      });
 
       /* -------------------------------
           ADD SIZE CHIPS (IF AVAILABLE)
