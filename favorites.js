@@ -33,6 +33,12 @@ export function renderFavorites() {
 
     grid.appendChild(card);
   });
+  const addCartBtn = document.querySelector(".add-cart-btn");
+  if (addCartBtn) {
+    addCartBtn.addEventListener("click", () => {
+      addToBag(product);
+    });
+  }
 
 
   document.querySelectorAll(".save-btn").forEach(save => {
