@@ -23,3 +23,9 @@ export function toggleFavorite(product) {
 
   saveFavorites(favorites);
 };
+
+export function addToBag(product) {
+  const bag = JSON.parse(localStorage.getItem('shopping-bag') || '[]');
+  bag.push(product);
+  localStorage.setItem('shopping-bag', JSON.stringify(bag));
+}
