@@ -38,11 +38,13 @@ export function renderFavorites() {
   });
 
 
-  document.querySelectorAll(".add-cart-btn").forEach(btn => {
+document.querySelectorAll(".add-cart-btn").forEach(btn => {
   btn.addEventListener("click", (e) => {
     const id = btn.dataset.id;
     const product = getFavorites().find(p => String(p.id) === String(id));
+    console.log("Product found:", product);  // <-- ADD THIS
     if (product) {
+      console.log("Adding to bag:", product);  // <-- ADD THIS
       addToBag(product);
     }
   });

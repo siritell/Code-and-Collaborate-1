@@ -25,7 +25,12 @@ export function toggleFavorite(product) {
 };
 
 export function addToBag(product) {
-  const bag = JSON.parse(localStorage.getItem('shopping-bag') || '[]');
-  bag.push(product);
-  localStorage.setItem('shopping-bag', JSON.stringify(bag));
+  const bag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
+  const existing = bag.find((item) => item.id === product.id);
+  if (existing) {
+    existing.quantity = (existing.quantity || 1) + 1;
+  } else {
+    bag.push({ ...product, quantity: 1 });
+  }
+  localStorage.setItem('shoppingBag', JSON.stringify(bag));
 }
