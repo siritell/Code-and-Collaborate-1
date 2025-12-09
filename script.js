@@ -26,14 +26,31 @@ fetch("products.json")
     renderProducts();
   })
   .catch(err => console.error("Could not load JSON:", err));
-  
 
+  
 function addSaleBanner() {
   const grid = document.getElementById("product-grid");
   const banner = document.createElement("div");
   banner.className = "sale-banner";
-  banner.innerHTML = `<img src="images/SALE.jpg" alt="Sale Banner" />`;
+  const container = document.createElement("div");
+  container.className = "sale-slider";
+  const images = [
+    "images/SALE.jpg",
+    "images/SALE.jpg"
+  ];
+  images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.className = "slide-img";
+    container.appendChild(img);
+  });
+  banner.appendChild(container);
   grid.parentNode.insertBefore(banner, grid);
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    container.style.transform = `translateX(-${index * 100}%)`;
+  }, 3000);
 }
 
 function addSaveButtonListeners() {
