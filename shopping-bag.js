@@ -1,3 +1,13 @@
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+}
+
 export function getBag() {
   return JSON.parse(localStorage.getItem("shoppingBag")) || [];
 }
@@ -24,11 +34,3 @@ export function removeFromBag(productId) {
   bag = bag.filter((item) => item.id !== productId);
   saveBag(bag);
 }
-
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});

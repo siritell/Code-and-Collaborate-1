@@ -162,6 +162,7 @@ a{
     width: 100%;
     text-align: left;
     transition: 0.3s;
+    z-index: 999;
   }
 
   .nav-item{

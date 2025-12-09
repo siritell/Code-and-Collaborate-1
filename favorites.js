@@ -1,3 +1,13 @@
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+}
+
 import {
   getFavorites,
   saveFavorites,
@@ -61,11 +71,3 @@ document.querySelectorAll(".add-cart-btn").forEach(btn => {
 }
 
 document.addEventListener("DOMContentLoaded", renderFavorites);
-
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
