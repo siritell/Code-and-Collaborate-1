@@ -30,7 +30,6 @@
   padding: 20px;
 }
 
-
 .bag-item {
   display: flex;
   align-items: center;
@@ -38,18 +37,73 @@
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
 }
+#bag-items {
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem; 
+}
 
 .bag-item img {
   width: 60px;
   height: auto;
-  margin-right: 10px;
+  margin-left: 1rem;
 }
 
 .remove-btn {
-  background: #000;
-  color: #fff;
-  border: none;
+  background: transparent;
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+  border: none; 
+}
+
+.favorite-top {
+  display: flex;
+  align-content: flex-start;
+}
+
+.favorites-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #000000;
+}
+
+.back-link {
+ padding-left: 1.5rem;
+
+}
+
+.bag-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.bag-item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.bag-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sale-price {
+  color: red;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #777;
 }

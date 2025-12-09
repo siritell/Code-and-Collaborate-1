@@ -25,9 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${item.picture1 || "icons/default-product.png"}" alt="${
         item.title
       }" class="bag-item-img">
-        <span>${item.title}</span>
-        <span>${item.quantity} x ${item.price}</span>
-        <button class="remove-btn">Remove</button>
+        <div class="bag-item-details">
+          <span class="bag-item-title">${item.title}</span>
+          <div class="bag-item-meta">
+            <span class="bag-item-quantity">${item.quantity}</span>
+            <span class="bag-item-multiply">&nbsp;x&nbsp;</span>
+            <span class="bag-item-price">
+  ${
+    item.sale_price
+      ? `<span class="sale-price">${item.sale_price} :-</span> <span class="old-price">${item.price} :-</span>`
+      : `${item.price} :-`
+  }
+</span>
+          </div>
+        </div>
+        <button class="remove-btn">x</button>
       `;
 
       div.querySelector(".remove-btn").addEventListener("click", () => {
