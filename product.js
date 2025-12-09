@@ -38,7 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="product-main-info">
               <h3 class="product-title">${product.title}</h3>
               <div class="price-cart-row">
-                <span class="product-price">${product.price} :-</span>
+                <span class="product-price">
+                ${
+                product.sale_price
+                  ? `<span class="old-price">${product.price} :-</span> <span class="product-sale-price">${product.sale_price} :-</span>`
+                  : `${product.price} :-`
+                 }
+                </span>
                 <button class="add-cart-btn">Add to cart</button>
               </div>
             </div>
