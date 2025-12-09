@@ -23,7 +23,13 @@ export function renderFavorites() {
       <img src="${product.picture1}" alt="${product.title}" />
       <div class="product-info">
         <div class="product-title">${product.title}</div>
-        <div class="product-price">$${product.price}</div>
+        <div class="product-price"> <span class="product-price">
+                ${
+                product.sale_price
+                  ? `<span class="old-price">${product.price} :-</span> <span class="product-sale-price">${product.sale_price} :-</span>`
+                  : `${product.price} :-`
+                 }
+                </span></div>
       </div>
       <button class="add-cart-btn" data-id="${product.id}">Add to Bag</button>
 

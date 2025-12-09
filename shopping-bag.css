@@ -75,3 +75,35 @@
  padding-left: 1.5rem;
 
 }
+
+.bag-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.bag-item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.bag-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sale-price {
+  color: red;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #777;
+}
