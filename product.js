@@ -144,3 +144,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "<p>Error loading product details. Try again later.</p>";
     });
 });
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
