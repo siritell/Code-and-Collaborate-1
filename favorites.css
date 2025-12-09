@@ -168,6 +168,7 @@ body {
 .product-sale-price {
   font-size: 10px;
   color: #e90000;
+  font-weight : bold;
 }
 
 .product-title {
