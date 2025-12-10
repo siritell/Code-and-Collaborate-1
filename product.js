@@ -1,4 +1,9 @@
-import { addToBag } from "./shopping-bag.js";
+import {
+  addToBag
+} from "./shopping-bag.js";
+
+import {isFavorite, toggleFavorite} from "./storage.js";
+
 
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -33,7 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Inject product HTML
       detailsContainer.innerHTML = `
           <div class="single-product">
-
+              <span class="save-btn ${isFavorite(product.id) ? "active" : ""}" data-id="${product.id}" title="Save">
+            <svg class="save-icon" viewBox="0 0 24 24" width="28" height="28">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </span>
             <!-- IMAGE SLIDER -->
             <div class="product-image-box slider-container">
               <button class="slide-btn prev-btn">&#10094;</button>
@@ -82,6 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
       `;
+
+            // FAVORITE (heart) handler: toggle storage and UI
+      const saveBtn = detailsContainer.querySelector(".save-btn");
+      if (saveBtn) {
+        saveBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          // update storage
+          toggleFavorite(product);
+          // update UI state immediately
+          saveBtn.classList.toggle("active");
+        });
+      }
+      
       // ADD TO CART EVENT
       const addCartBtn = document.querySelector(".add-cart-btn");
       if (addCartBtn) {
