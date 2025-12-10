@@ -168,28 +168,3 @@
 .accordion-item.active .accordion-content {
   max-height: 500px;
 }
-.single-product {
-  position: relative;
-}
-
-.save-btn {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.2s;
-    z-index: 2;
-}
-
-.save-btn .save-icon path {
-  fill: none;
-  stroke: #000;
-  stroke-width: 2;
-}
-
-.save-btn.active .save-icon path {
-  fill: #000;
-  stroke: #000;
-}

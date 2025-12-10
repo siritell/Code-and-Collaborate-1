@@ -1,5 +1,14 @@
 import { toggleFavorite } from "./storage.js";
 
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+}
 
 let products = [];
 let itemsToShow = 8; // 4 rows × 2 columns
@@ -125,12 +134,3 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   itemsToShow += 8; // 4 more rows
   renderProducts();
 });
-
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
-

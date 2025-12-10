@@ -3,35 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Details</title>
+    <meta name="description" content="TrendWear - Your Fashion Destination" />
+    <title>Product Details - TrendWear</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="single-product.css" />
   </head>
+  
   <body class="product-page">
-    <div class="header">
-      <img
-        src="icons/hamburger-menu.svg"
-        alt="hamburger-menu icon"
-        class="hamburger-menu"
-      />
-      <span class="logo"> TW </span>
+    
+    <header class="header">
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <nav class="navbar">
+        <a href="index.html" class="nav-branding">TW</a>
+      </nav>
+
       <div class="right-icons">
         <a href="favorites.html" class="favorites-link">
           <img
-            src="icons/heart.svg"
+            src="icons/heart-outline.svg"
             alt="favorites icon"
             class="favorites-icon"
           />
         </a>
         <a href="shopping-bag.html" class="shopping-bag">
           <img
-            src="icons/shoppingbag.svg"
+            src="icons/shoppingbag-outline.svg"
             alt="shopping-bag icon"
             class="shopping-bag"
           />
         </a>
       </div>
-    </div>
+    </header>
+
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#" class="nav-link">New In</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">SALE</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
+    </ul>
 
     <main id="product-details">
       <!-- Product details will be injected here by script.js -->
@@ -55,6 +68,7 @@
         <img class="facebook-icon" src="icons/facebook.svg" alt="Facebook" />
       </div>
     </footer>
+    
     <script type="module" src="product.js"></script>
   </body>
 </html>
