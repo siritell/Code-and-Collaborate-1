@@ -1,18 +1,14 @@
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
 if (hamburger && navMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
 }
 
-import {
-  getFavorites,
-  saveFavorites,
-  addToBag
-} from "./storage.js";
+import { getFavorites, saveFavorites, addToBag } from "./storage.js";
 
 export function renderFavorites() {
   const grid = document.getElementById("favorites-grid");
@@ -21,11 +17,12 @@ export function renderFavorites() {
   grid.innerHTML = "";
 
   if (favorites.length === 0) {
-    grid.innerHTML = "<p style='padding:20px;font-size:18px;'>No favorites yet 💛</p>";
+    grid.innerHTML =
+      "<p style='padding:20px;font-size:18px;'>No favorites yet 💛</p>";
     return;
   }
 
-  favorites.forEach(product => {
+  favorites.forEach((product) => {
     const card = document.createElement("div");
     card.className = "product-card";
 
@@ -53,23 +50,23 @@ export function renderFavorites() {
     grid.appendChild(card);
   });
 
-
-document.querySelectorAll(".add-cart-btn").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    const id = btn.dataset.id;
-    const product = getFavorites().find(p => String(p.id) === String(id));
-    console.log("Product found:", product);  // <-- ADD THIS
-    if (product) {
-      console.log("Adding to bag:", product);  // <-- ADD THIS
-      addToBag(product);
-    }
+  document.querySelectorAll(".add-cart-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const id = btn.dataset.id;
+      const product = getFavorites().find((p) => String(p.id) === String(id));
+      console.log("Product found:", product); // <-- ADD THIS
+      if (product) {
+        console.log("Adding to bag:", product); // <-- ADD THIS
+        addToBag(product);
+        alert(`${product.title} added to cart!`);
+      }
+    });
   });
-});
 
-  document.querySelectorAll(".save-btn").forEach(save => {
+  document.querySelectorAll(".save-btn").forEach((save) => {
     save.addEventListener("click", () => {
       const id = save.dataset.id;
-      const updated = getFavorites().filter(p => String(p.id) !== String(id));
+      const updated = getFavorites().filter((p) => String(p.id) !== String(id));
       saveFavorites(updated);
       renderFavorites();
     });
