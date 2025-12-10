@@ -77,6 +77,15 @@ textarea:not([rows]) {
 
 /* -----FAVORITES CSS----- */
 
+.no-favorites {
+  font-family: Arial;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
 .product-card {
   padding: 30px;
   display: flex;
@@ -203,4 +212,21 @@ textarea:not([rows]) {
 
 .add-cart-btn:hover {
   opacity: 0.85;
+}
+
+/* FAVORITES WITHOUT ITEM */
+
+.shopping-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  border: none;
+  border-radius: 6px;
+  background: black;
+  color: white;
+}
+
+.shopping-button-wrapper {
+  text-align: center;
+  width: 100%;
 }

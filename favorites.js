@@ -21,7 +21,7 @@ export function renderFavorites() {
   grid.innerHTML = "";
 
   if (favorites.length === 0) {
-    grid.innerHTML = "<p style='padding:20px;font-size:18px;'>No favorites yet 💛</p>";
+    grid.innerHTML = "<p class='no-favorites'>No favorites yet!</p>";
     return;
   }
 
