@@ -21,28 +21,42 @@ document.addEventListener("DOMContentLoaded", () => {
     bag.forEach((item) => {
       const div = document.createElement("div");
       div.className = "bag-item";
+
+      // Original layout preserved
       div.innerHTML = `
-        <img src="${item.picture1 || "icons/default-product.png"}" alt="${
-        item.title
-      }" class="bag-item-img">
+        <img src="${item.picture1 || "icons/default-product.png"}" alt="${item.title}" class="bag-item-img">
         <div class="bag-item-details">
           <span class="bag-item-title">${item.title}</span>
           <div class="bag-item-meta">
             <span class="bag-item-quantity">${item.quantity}</span>
             <span class="bag-item-multiply">&nbsp;x&nbsp;</span>
             <span class="bag-item-price">
-  ${
-    item.sale_price
-      ? `<span class="sale-price">${item.sale_price} :-</span> <span class="old-price">${item.price} :-</span>`
-      : `${item.price} :-`
-  }
-</span>
+              ${
+                item.sale_price
+                  ? `<span class="sale-price">${item.sale_price} :-</span> <span class="old-price">${item.price} :-</span>`
+                  : `${item.price} :-`
+              }
+            </span>
           </div>
         </div>
         <button class="remove-btn">x</button>
       `;
 
-      div.querySelector(".remove-btn").addEventListener("click", () => {
+      // Add click event to image and details to go to product page
+      const img = div.querySelector(".bag-item-img");
+      const details = div.querySelector(".bag-item-details");
+
+      [img, details].forEach(el => {
+        el.style.cursor = "pointer"; // show pointer
+        el.addEventListener("click", () => {
+          window.location.href = `product.html?id=${item.id}`;
+        });
+      });
+
+      // Remove button works
+      const removeBtn = div.querySelector(".remove-btn");
+      removeBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent accidental navigation
         removeFromBag(item.id);
         renderBag();
       });

@@ -37,6 +37,16 @@
   font-weight: bold;
 }
 
+.product-sale-price {
+  font-size: 14px;
+  color: #e90000;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+}
+
 .add-cart-btn {
   background: #000000;
   color: #FFFFFF;
