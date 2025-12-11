@@ -44,7 +44,7 @@ function addSaleBanner() {
   banner.className = "sale-banner";
   const container = document.createElement("div");
   container.className = "sale-slider";
-  const images = ["images/SALE.jpg", "images/SALE.jpg"];
+  const images = ["images/SALE.png", "images/NEW IN.png"];
   images.forEach((src) => {
     const img = document.createElement("img");
     img.src = src;
