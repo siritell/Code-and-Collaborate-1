@@ -35,7 +35,6 @@ fetch("products.json")
   .then((response) => response.json())
   .then((data) => {
     products = data;
-    addSaleBanner();
     applyURLFilter(); // << USE URL FILTER HERE
   })
   .catch((err) => console.error("Could not load JSON:", err));
@@ -65,30 +64,6 @@ function applyURLFilter() {
 
   // Default: no filter
   renderProducts(products);
-}
-
-// -------------------------
-function addSaleBanner() {
-  const grid = document.getElementById("product-grid");
-  const banner = document.createElement("div");
-  banner.className = "sale-banner";
-  const container = document.createElement("div");
-  container.className = "sale-slider";
-  const images = ["images/SALE.jpg", "images/SALE.jpg"];
-  images.forEach((src) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.className = "slide-img";
-    container.appendChild(img);
-  });
-  banner.appendChild(container);
-  grid.parentNode.insertBefore(banner, grid);
-
-  let index = 0;
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    container.style.transform = `translateX(-${index * 100}%)`;
-  }, 3000);
 }
 
 function addSaveButtonListeners() {
