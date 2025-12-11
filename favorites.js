@@ -11,6 +11,7 @@ if (hamburger && navMenu) {
 import {
   getFavorites,
   saveFavorites,
+  toggleFavorite,
   addToBag
 } from "./storage.js";
 
@@ -20,7 +21,7 @@ export function renderFavorites() {
 
   grid.innerHTML = "";
 
-  if (favorites.length === 0) {
+  if (!favorites || favorites.length === 0) {
     grid.innerHTML = "<p class='no-favorites'>No favorites yet!</p>";
     return;
   }
@@ -55,19 +56,43 @@ favorites.forEach(product => {
   grid.appendChild(card);
 });
 
-
-
 document.querySelectorAll(".add-cart-btn").forEach(btn => {
   btn.addEventListener("click", (e) => {
+     e.stopPropagation(); 
     const id = btn.dataset.id;
     const product = getFavorites().find(p => String(p.id) === String(id));
     console.log("Product found:", product);  // <-- ADD THIS
     if (product) {
       console.log("Adding to bag:", product);  // <-- ADD THIS
       addToBag(product);
+      showToast(`${product.title} added to bag`); // <-- show message
     }
   });
 });
+
+function showToast(message, duration = 2500) {
+  const containerId = 'toast-container';
+  let container = document.getElementById(containerId);
+  if (!container) {
+    container = document.createElement('div');
+    container.id = containerId;
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  container.appendChild(toast);
+
+  // trigger show (CSS handles fade/translate)
+  requestAnimationFrame(() => toast.classList.add('show'));
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    // remove from DOM after transition
+    toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+  }, duration);
+}
 
   document.querySelectorAll(".save-btn").forEach(save => {
     save.addEventListener("click", () => {

@@ -230,3 +230,32 @@ textarea:not([rows]) {
   text-align: center;
   width: 100%;
 }
+
+#toast-container {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 220ms ease, opacity 220ms ease;
+  font-size: 14px;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
