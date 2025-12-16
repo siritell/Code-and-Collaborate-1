@@ -1,10 +1,10 @@
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
 if (hamburger && navMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
 }
 
@@ -12,25 +12,38 @@ import {
   getFavorites,
   saveFavorites,
   toggleFavorite,
-  addToBag
+  addToBag,
 } from "./storage.js";
 
 export function renderFavorites() {
   const grid = document.getElementById("favorites-grid");
   const favorites = getFavorites();
 
+  const emptyBagImage = document.querySelector(".empty-bag");
+  const noFavoritesText = document.querySelector(".no-favorites");
+  const shoppingButton = document.querySelector(".shopping-button-wrapper");
+  const isEmpty = !favorites || favorites.length === 0;
+  if (emptyBagImage) {
+    emptyBagImage.style.display = isEmpty ? "block" : "none";
+  }
+  if (noFavoritesText) {
+    noFavoritesText.style.display = isEmpty ? "block" : "none";
+  }
+  if (shoppingButton) {
+    shoppingButton.style.display = isEmpty ? "block" : "none";
+  }
+
   grid.innerHTML = "";
 
-  if (!favorites || favorites.length === 0) {
-    grid.innerHTML = "<p class='no-favorites'>Your favorites list is waiting to be filled</p>";
+  if (isEmpty) {
     return;
   }
 
-favorites.forEach(product => {
-  const card = document.createElement("div");
-  card.className = "product-card";
+  favorites.forEach((product) => {
+    const card = document.createElement("div");
+    card.className = "product-card";
 
-  card.innerHTML = `
+    card.innerHTML = `
     <a href="product.html?id=${product.id}" class="product-link">
       <img src="${product.picture1}" alt="${product.title}" />
       <div class="product-info">
@@ -53,46 +66,54 @@ favorites.forEach(product => {
     </span>
   `;
 
-  grid.appendChild(card);
+    grid.appendChild(card);
 
-  const addBtn = card.querySelector(".add-cart-btn");
+    const addBtn = card.querySelector(".add-cart-btn");
     if (addBtn) {
       addBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         addToBag(product);
-        showToast(`${product.title} added to bag`, { target: card, duration: 1600 });
+        showToast(`${product.title} added to bag`, {
+          target: card,
+          duration: 1600,
+        });
       });
     }
 
-     const saveBtn = card.querySelector(".save-btn");
+    const saveBtn = card.querySelector(".save-btn");
     if (saveBtn) {
       saveBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         toggleFavorite(product);
-        const nowFav = getFavorites().some(p => String(p.id) === String(product.id));
-        showToast(nowFav ? "Added to favorites" : "Removed from favorites", { target: saveBtn, duration: 1400 });
+        const nowFav = getFavorites().some(
+          (p) => String(p.id) === String(product.id)
+        );
+        showToast(nowFav ? "Added to favorites" : "Removed from favorites", {
+          target: saveBtn,
+          duration: 1400,
+        });
         // re-render so removed items disappear
         renderFavorites();
       });
     }
   });
-}   
+}
 
 // toast that can be anchored to a target element (falls back to bottom-right)
 function showToast(message, { duration = 2000, target = null } = {}) {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
+  const toast = document.createElement("div");
+  toast.className = "toast";
   toast.textContent = message;
   document.body.appendChild(toast);
 
-  toast.style.position = 'fixed';
+  toast.style.position = "fixed";
   toast.style.zIndex = 9999;
-  toast.style.whiteSpace = 'nowrap';
+  toast.style.whiteSpace = "nowrap";
 
   // position: center over target (viewport coords) or bottom-right fallback
   if (target instanceof Element) {
     const rect = target.getBoundingClientRect();
-       let left = rect.left + rect.width / 2;
+    let left = rect.left + rect.width / 2;
     let top = rect.top - 36; // place above target by default
 
     // ensure top is not off-screen
@@ -100,10 +121,10 @@ function showToast(message, { duration = 2000, target = null } = {}) {
     top = Math.max(margin, top);
 
     // apply initial coords so offsetWidth is available
-    toast.style.left = left + 'px';
-    toast.style.top = top + 'px';
+    toast.style.left = left + "px";
+    toast.style.top = top + "px";
     // CSS should include translateX(-50%) for centering animation
-    requestAnimationFrame(() => toast.classList.add('show'));
+    requestAnimationFrame(() => toast.classList.add("show"));
 
     // after render, clamp horizontal position so toast stays inside viewport
     requestAnimationFrame(() => {
@@ -112,21 +133,21 @@ function showToast(message, { duration = 2000, target = null } = {}) {
       const maxLeft = window.innerWidth - margin - tw / 2;
       if (left < minLeft) left = minLeft;
       if (left > maxLeft) left = maxLeft;
-      toast.style.left = left + 'px';
+      toast.style.left = left + "px";
     });
   } else {
     // fallback bottom-right
-    toast.style.right = '18px';
-    toast.style.bottom = '24px';
-    requestAnimationFrame(() => toast.classList.add('show'));
+    toast.style.right = "18px";
+    toast.style.bottom = "24px";
+    requestAnimationFrame(() => toast.classList.add("show"));
   }
 
   // remove after duration
   setTimeout(() => {
-    toast.classList.remove('show');
-    toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+    toast.classList.remove("show");
+    toast.addEventListener("transitionend", () => toast.remove(), {
+      once: true,
+    });
   }, Number(duration) || 0);
 }
 document.addEventListener("DOMContentLoaded", renderFavorites);
-
-
