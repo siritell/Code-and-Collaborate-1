@@ -81,10 +81,6 @@ h2.empty-bag {
   border-bottom: 2px solid #000000;
 }
 
-.back-link {
- padding-left: 1.5rem;
-
-}
 
 .bag-item {
   display: grid;

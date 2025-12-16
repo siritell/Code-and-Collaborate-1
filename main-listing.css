@@ -247,3 +247,23 @@ body {
     transform: translateX(0);
   }
 }
+.toast {
+  pointer-events: auto;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  font-size: 13px;
+  white-space: nowrap;
+  transform: translateY(8px) translateX(-50%);
+  opacity: 0;
+  transition: transform 180ms ease, opacity 180ms ease;
+  z-index: 9999;
+}
+
+/* visible state */
+.toast.show {
+  transform: translateY(0) translateX(-50%);
+  opacity: 1;
+}

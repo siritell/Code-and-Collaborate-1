@@ -73,7 +73,7 @@ export function productLoad() {
         </div>
       `;
 
-            // FAVORITE (heart) handler: toggle storage and UI
+
       const saveBtn = detailsContainer.querySelector(".save-btn");
       if (saveBtn) {
         saveBtn.addEventListener("click", (e) => {
@@ -81,13 +81,53 @@ export function productLoad() {
           // update storage
           toggleFavorite(product);
           // update UI state immediately
-          saveBtn.classList.toggle("active");
+ const nowActive = saveBtn.classList.toggle("active");
+          showToast(nowActive ? "Added to favorites" : "Removed from favorites", { target: saveBtn, duration: 1600 });
         });
       }
       
-      // ADD TO CART EVENT
-      const addCartBtn = document.querySelector(".add-cart-btn");
-      if (addCartBtn) addCartBtn.addEventListener("click", () => addToBag(product));
+
+ const addCartBtn = detailsContainer.querySelector(".add-cart-btn");
+      if (addCartBtn) {
+        addCartBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          addToBag(product);
+          const target = detailsContainer.querySelector(".single-product") || addCartBtn;
+          showToast(`${product.title} added to bag`, { target, duration: 2200 });
+        });
+      }
+
+function showToast(message, { duration = 2000, target = null } = {}) {
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  toast.style.zIndex = 9999;
+  toast.style.whiteSpace = 'nowrap';
+
+
+  if (target instanceof Element) {
+    const rect = target.getBoundingClientRect();
+    toast.classList.add('center');
+    toast.style.position = "fixed";
+    toast.style.left = (rect.left + rect.width / 2) + "px"; 
+     toast.style.top = Math.max(8, rect.top - 36) + 'px';
+  } else {
+    toast.classList.add('fixed');
+    toast.style.position = "fixed";
+    toast.style.right = "18px";
+    toast.style.bottom = "24px";
+  }
+ 
+  requestAnimationFrame(() => toast.classList.add("show"));
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    toast.addEventListener("transitionend", () => toast.remove(), { once: true });
+  }, Number(duration) || 0);
+}
+
 
       const images = document.querySelectorAll(".main-product-img");
       const nextBtn = document.querySelector(".next-btn");
