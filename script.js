@@ -136,11 +136,20 @@ function renderProducts(list = products) {
 
   addSaveButtonListeners();
 
-  const loadMoreBtn = document.getElementById("load-more-btn");
-  if (loadMoreBtn) {
-    loadMoreBtn.style.display =
-      showingSaleOnly || showingNewOnly ? "none" : "block";
+const loadMoreBtn = document.getElementById("load-more-btn");
+
+if (loadMoreBtn) {
+  if (
+    showingSaleOnly ||
+    showingNewOnly ||
+    itemsToShow >= list.length
+  ) {
+    loadMoreBtn.style.display = "none";
+  } else {
+    loadMoreBtn.style.display = "block";
   }
+}
+
 }
 
 // -------------------------

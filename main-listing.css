@@ -136,9 +136,10 @@ body {
 }
 
 #load-more-btn {
-  width: 100%;
+  width: 35%;
   padding: 14px;
-  margin: 15px 0;
+  display : block;
+  margin: 15px auto;
   border: none;
   border-radius: 6px;
   background: #000;
