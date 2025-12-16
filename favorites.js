@@ -1,10 +1,10 @@
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
 if (hamburger && navMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
 }
 
@@ -12,25 +12,38 @@ import {
   getFavorites,
   saveFavorites,
   toggleFavorite,
-  addToBag
+  addToBag,
 } from "./storage.js";
 
 export function renderFavorites() {
   const grid = document.getElementById("favorites-grid");
   const favorites = getFavorites();
 
+  const emptyBagImage = document.querySelector(".empty-bag");
+  const noFavoritesText = document.querySelector(".no-favorites");
+  const shoppingButton = document.querySelector(".shopping-button-wrapper");
+  const isEmpty = !favorites || favorites.length === 0;
+  if (emptyBagImage) {
+    emptyBagImage.style.display = isEmpty ? "block" : "none";
+  }
+  if (noFavoritesText) {
+    noFavoritesText.style.display = isEmpty ? "block" : "none";
+  }
+  if (shoppingButton) {
+    shoppingButton.style.display = isEmpty ? "block" : "none";
+  }
+
   grid.innerHTML = "";
 
-  if (!favorites || favorites.length === 0) {
-    grid.innerHTML = "<p class='no-favorites'>No favorites yet!</p>";
+  if (isEmpty) {
     return;
   }
 
-favorites.forEach(product => {
-  const card = document.createElement("div");
-  card.className = "product-card";
+  favorites.forEach((product) => {
+    const card = document.createElement("div");
+    card.className = "product-card";
 
-  card.innerHTML = `
+    card.innerHTML = `
     <a href="product.html?id=${product.id}" class="product-link">
       <img src="${product.picture1}" alt="${product.title}" />
       <div class="product-info">
@@ -53,51 +66,53 @@ favorites.forEach(product => {
     </span>
   `;
 
-  grid.appendChild(card);
-});
-
-document.querySelectorAll(".add-cart-btn").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-     e.stopPropagation(); 
-    const id = btn.dataset.id;
-    const product = getFavorites().find(p => String(p.id) === String(id));
-    console.log("Product found:", product);  // <-- ADD THIS
-    if (product) {
-      console.log("Adding to bag:", product);  // <-- ADD THIS
-      addToBag(product);
-      showToast(`${product.title} added to bag`); // <-- show message
-    }
+    grid.appendChild(card);
   });
-});
 
-function showToast(message, duration = 2500) {
-  const containerId = 'toast-container';
-  let container = document.getElementById(containerId);
-  if (!container) {
-    container = document.createElement('div');
-    container.id = containerId;
-    document.body.appendChild(container);
+  document.querySelectorAll(".add-cart-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.id;
+      const product = getFavorites().find((p) => String(p.id) === String(id));
+      console.log("Product found:", product); // <-- ADD THIS
+      if (product) {
+        console.log("Adding to bag:", product); // <-- ADD THIS
+        addToBag(product);
+        showToast(`${product.title} added to bag`); // <-- show message
+      }
+    });
+  });
+
+  function showToast(message, duration = 2500) {
+    const containerId = "toast-container";
+    let container = document.getElementById(containerId);
+    if (!container) {
+      container = document.createElement("div");
+      container.id = containerId;
+      document.body.appendChild(container);
+    }
+
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.textContent = message;
+    container.appendChild(toast);
+
+    // trigger show (CSS handles fade/translate)
+    requestAnimationFrame(() => toast.classList.add("show"));
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+      // remove from DOM after transition
+      toast.addEventListener("transitionend", () => toast.remove(), {
+        once: true,
+      });
+    }, duration);
   }
 
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = message;
-  container.appendChild(toast);
-
-  // trigger show (CSS handles fade/translate)
-  requestAnimationFrame(() => toast.classList.add('show'));
-
-  setTimeout(() => {
-    toast.classList.remove('show');
-    // remove from DOM after transition
-    toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-  }, duration);
-}
-
-  document.querySelectorAll(".save-btn").forEach(save => {
+  document.querySelectorAll(".save-btn").forEach((save) => {
     save.addEventListener("click", () => {
       const id = save.dataset.id;
-      const updated = getFavorites().filter(p => String(p.id) !== String(id));
+      const updated = getFavorites().filter((p) => String(p.id) !== String(id));
       saveFavorites(updated);
       renderFavorites();
     });
@@ -105,5 +120,3 @@ function showToast(message, duration = 2500) {
 }
 
 document.addEventListener("DOMContentLoaded", renderFavorites);
-
-

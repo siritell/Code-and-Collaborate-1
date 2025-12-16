@@ -4,10 +4,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 160px); 
-  gap: 3rem;
   text-align: center;
-  margin-top: 3rem;
+}
+h2.empty-bag {
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+.empty-bag-img {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .shopping-button {
