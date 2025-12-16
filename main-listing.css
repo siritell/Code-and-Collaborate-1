@@ -115,19 +115,23 @@ body {
 .product-title {
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #747474;
+  color: #000000;
 }
 
 .product-price {
   font-size: 14px;
   display: flex;
   gap: 10px;
-  color: #434343;
+  color: #000000;
 }
 
 .product-sale-price {
   font-size: 14px;
-  color: #e90000;
+  font-weight: 600;
+  color: #ffffff;
+  padding-left: 4px;
+  padding-right: 5px;
+  background-color: #e90000;
 }
 
 .old-price {
@@ -135,36 +139,17 @@ body {
   color: #888;
 }
 
-
-
-.sale-banner {
-  display: block;
+.load-more-container {
+  display: flex;
+  justify-content: center;
   margin: 20px 0;
 }
 
-.sale-banner img {
-  width: 100%;
-  height: auto;
-}
-
-.sale-slider {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s ease;
-}
-
-.slide-img {
-  width: 100%;
-  height: 100%;
-  flex-shrink: 0;     
-  object-fit: cover;
-}
-
 #load-more-btn {
-  width: 100%;
+  width: 35%;
   padding: 14px;
-  margin: 15px 0;
+  display : block;
+  margin: 15px auto;
   border: none;
   border-radius: 6px;
   background: #000;
@@ -179,15 +164,86 @@ body {
 
 .product-price {
   font-size: 10px;
-  color: #434343;
+  color: #000000;
 }
 
 .product-sale-price {
   font-size: 10px;
-  color: #e90000;
+  font-weight: 600;
+  color: #ffffff;
+  padding-left: 4px;
+  padding-right: 5px;
+  background-color: #e90000;
 }
 
 .product-title {
   font-size: 10px;
 }
+}
+
+/*BANNER SLIDE EFFECT*/
+
+.banner-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px 0;
+}
+
+.banner-slider {
+  display: flex;
+  width: 600%; /* 6 images × 100% each */
+  height: 100%;
+  animation: scroll 40s ease-in-out infinite;
+}
+
+.banner-slider img {
+  width: 16.6666%; /* Each image is 16.67% of the slider (6 images total) */
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Infinite scrolling animation with slide effect and pauses */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  12.5% {
+    transform: translateX(-16.6666%);
+  }
+  16.6666% {
+    transform: translateX(-16.6666%);
+  }
+  29.1666% {
+    transform: translateX(-33.3333%);
+  }
+  33.3333% {
+    transform: translateX(-33.3333%);
+  }
+  45.8333% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  62.5% {
+    transform: translateX(-66.6666%);
+  }
+  66.6666% {
+    transform: translateX(-66.6666%);
+  }
+  79.1666% {
+    transform: translateX(-83.3333%);
+  }
+  83.3333% {
+    transform: translateX(-83.3333%);
+  }
+  95.8333% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

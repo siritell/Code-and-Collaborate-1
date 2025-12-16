@@ -34,12 +34,17 @@
 
 .product-price {
   font-size: 14px;
-  font-weight: bold;
+  color: #000000;
+
 }
 
 .product-sale-price {
   font-size: 14px;
-  color: #e90000;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: -4px;
+  padding: 4px;
+  background-color: #e90000;
 }
 
 .old-price {
