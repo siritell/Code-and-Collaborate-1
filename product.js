@@ -86,8 +86,45 @@ export function productLoad() {
       }
       
       // ADD TO CART EVENT
-      const addCartBtn = document.querySelector(".add-cart-btn");
-      if (addCartBtn) addCartBtn.addEventListener("click", () => addToBag(product));
+ const addCartBtn = detailsContainer.querySelector(".add-cart-btn");
+      if (addCartBtn) {
+        addCartBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          addToBag(product);
+          const target = detailsContainer.querySelector(".single-product") || addCartBtn;
+          showToast(`${product.title} added to bag`, { target, duration: 2200 });
+        });
+      }
+
+      // Floating toast implementation (positions over target using fixed coords)
+function showToast(message, { duration = 2200, target = null } = {}) {
+  const toast = document.createElement("div");
+  toast.className = "toast float";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  // position using viewport coords (fixed) so transforms/ancestors won't move it
+  if (target) {
+    const rect = target.getBoundingClientRect();
+    toast.style.position = "fixed";
+    toast.style.left = (rect.left + rect.width / 2) + "px"; // center X
+    toast.style.bottom = rect.top + "px"; // above target
+  } else {
+    toast.style.position = "fixed";
+    toast.style.right = "18px";
+    toast.style.bottom = "24px";
+  }
+  toast.style.zIndex = 9999;
+
+  // show with CSS transition
+  requestAnimationFrame(() => toast.classList.add("show"));
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    toast.addEventListener("transitionend", () => toast.remove(), { once: true });
+  }, Number(duration) || 0);
+}
+
 
       const images = document.querySelectorAll(".main-product-img");
       const nextBtn = document.querySelector(".next-btn");
