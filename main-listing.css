@@ -92,7 +92,7 @@ body {
 }
 
 .product-card {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -103,6 +103,7 @@ body {
   width: 100%;
   height: auto;
   border-radius: 4px;
+  margin-top: 10px;
   margin-bottom: 8px;
 }
 

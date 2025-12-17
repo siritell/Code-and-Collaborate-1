@@ -228,7 +228,7 @@ a{
 /* Save button */
 .save-btn {
     position: absolute;
-    top: 20px;
+    top: 5px;
     right: 20px;
     font-size: 28px;
     cursor: pointer;
