@@ -73,9 +73,42 @@ function addSaveButtonListeners() {
       save.classList.toggle("active");
       const product = products.find((p) => p.id == save.dataset.id);
       toggleFavorite(product);
+
+    const active = save.classList.contains('active');
+      showToast(active ? 'Added to favorites' : 'Removed from favorites', { target: save });
     });
   });
 }
+// showToast: small floating message anchored to target (fallback bottom-right)
+function showToast(message, { duration = 1600, target = null } = {}) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  // position: center over target (viewport coords) or bottom-right fallback
+  if (target instanceof Element) {
+    const rect = target.getBoundingClientRect();
+    toast.style.position = 'fixed';
+    toast.style.left = (rect.left + rect.width / 2) + 'px';
+    // place slightly above the element
+    toast.style.top = Math.max(8, rect.top - 36) + 'px';
+  } else {
+    toast.style.position = 'fixed';
+    toast.style.right = '18px';
+    toast.style.bottom = '24px';
+  }
+  toast.style.zIndex = 9999;
+
+  // animate in/out via CSS classes
+  requestAnimationFrame(() => toast.classList.add('show'));
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+    toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+  }, Number(duration) || 0);
+}
+
 
 // -------------------------
 // RENDER PRODUCTS
