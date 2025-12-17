@@ -8,15 +8,17 @@
 }
 h2.empty-bag {
   font-family: Arial;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   text-align: center;
-  padding: 20px;
+  padding: 0.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .empty-bag-img {
   max-width: 200px;
   height: auto;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 

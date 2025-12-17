@@ -77,14 +77,6 @@ textarea:not([rows]) {
 
 /* -----FAVORITES CSS----- */
 
-.no-favorites {
-  font-family: Arial;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  padding: 20px;
-}
-
 .product-card {
   padding: 30px;
   display: flex;
@@ -270,8 +262,19 @@ textarea:not([rows]) {
   .toast { max-width: 90vw; overflow: hidden; text-overflow: ellipsis; }
 }
 
+/* -----NO FAVORITES----- */
+
+.no-favorites {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
 .empty-bag {
   max-width: 200px;
   height: auto;
-  margin: 0 auto 1rem;
+  margin: 1rem auto 1rem;
 }
