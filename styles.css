@@ -133,14 +133,12 @@ a {
   margin: 0;
 }
 
-.nav-item-sale a,
-.nav-item-sale .nav-link {
+.nav-item-sale a {
   color: #ff0000;
 }
 
 .nav-branding {
   font-size: 1.8rem;
-  font-weight: bold;
 }
 
 .hamburger {
