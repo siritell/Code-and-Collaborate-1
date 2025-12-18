@@ -10,15 +10,22 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
 
-      <nav class="navbar">
-        <a href="index.html" class="nav-branding">TW</a>
+    <header class="header">
+        <a href="index.html" class="nav-branding" aria-label="Homepage">TrendWear</a>
+
+      <button class="hamburger" aria-label="Open main menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html?filter=new" class="nav-link">New In</a></li>
+          <li class="nav-item-sale"><a href="index.html?filter=sale" class="nav-link">SALE</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
+        </ul>
       </nav>
 
       <div class="right-icons">
@@ -38,16 +45,6 @@
         </a>
       </div>
     </header>
-
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="index.html?filter=new" class="nav-link">New In</a>
-      </li>
-      <li class="nav-item-sale">
-        <a href="index.html?filter=sale" class="nav-link">SALE</a>
-      </li>
-      <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
-    </ul>
 
     <main>
       <div id="favorite-top">
